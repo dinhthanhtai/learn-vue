@@ -15,6 +15,11 @@ const routes = [
     alias: "list",
   },
   {
+    path: "/event/create",
+    name: "event-create",
+    component: EventCreate,
+  },
+  {
     path: "/event/:id",
     name: "event-show",
     // route level code-splitting
@@ -24,11 +29,6 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
     component: EventShow,
     props: true,
-  },
-  {
-    path: "/event/create",
-    name: "event-create",
-    component: EventCreate,
   },
   {
     path: "/user/:username",
