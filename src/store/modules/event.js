@@ -1,4 +1,5 @@
 import EventService from "@/services/EvenService";
+import { onAddNotification, EventType } from './notification';
 
 export const namespaced = true;
 
@@ -40,22 +41,32 @@ export const mutations = {
 
 export const actions = {
   createEvent(props, event) {
-    const { commit, rootState } = props;
+    const { commit, rootState, dispatch } = props;
     console.log('User creating Event is ' + rootState.user.user.name);
     return EventService.postEvent(event).then(() => {
-      commit('ADD_EVENT', event)
+      commit('ADD_EVENT', event);
+      const message = 'Your event has been created!';
+
+      onAddNotification(EventType.success, message, dispatch)
+
       return event;
+    }).catch(error => {
+      const message = 'There was a problem creating your event: ' + error.message;
+      onAddNotification(EventType.error, message, dispatch)
+      throw error;
     });
   },
-  fetchEvents({ commit }, { perPage, page }) {
+  fetchEvents({ commit, dispatch }, { perPage, page }) {
     EventService.getEvents(perPage, page).then(response => {
       commit('SET_TOTALPAGES', response.data.items)
       commit('SET_EVENTS', response.data.data)
     }).catch(error => {
-      console.log('There was an error' + error.response)
+      const message = 'There was a problem fetching events: ' + error.message;
+
+      onAddNotification(EventType.error, message, dispatch)
     })
   },
-  fetchEvent({ commit, getters }, id) {
+  fetchEvent({ commit, getters, dispatch }, id) {
     const event = getters.getEvent(id);
     if (event) {
       commit('SET_EVENT', event);
@@ -65,7 +76,8 @@ export const actions = {
           commit('SET_EVENT', response.data)
         })
         .catch(error => {
-          console.log('There was an error:', error.response)
+          const message = 'There was a problem fetching events: ' + error.message;
+          onAddNotification(EventType.error, message, dispatch)
         })
     }
   }
