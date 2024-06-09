@@ -7,6 +7,7 @@ export const state = {
   events: [],
   totalPages: 0,
   event: {},
+  perPage: 3
 }
 
 export const getters = {
@@ -56,8 +57,8 @@ export const actions = {
       throw error;
     });
   },
-  fetchEvents({ commit, dispatch }, { perPage, page }) {
-    EventService.getEvents(perPage, page).then(response => {
+  fetchEvents({ commit, dispatch, state }, { page }) {
+    EventService.getEvents(state.perPage, page).then(response => {
       commit('SET_TOTALPAGES', response.data.items)
       commit('SET_EVENTS', response.data.data)
     }).catch(error => {

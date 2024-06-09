@@ -15,6 +15,7 @@ const routes = [
     name: "event-list",
     component: EventList,
     alias: "list",
+    props: true
   },
   {
     path: "/event/create",

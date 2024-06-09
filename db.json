@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": 1214274,
+      "id": "1214274",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -91,7 +91,7 @@
       "attendees": []
     },
     {
-      "id": 6733210,
+      "id": "6733210",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -109,7 +109,7 @@
       "attendees": []
     },
     {
-      "id": 2446467,
+      "id": "2446467",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -127,7 +127,7 @@
       "attendees": []
     },
     {
-      "id": 2446467,
+      "id": "2446467",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -145,7 +145,7 @@
       "attendees": []
     },
     {
-      "id": 942177,
+      "id": "942177",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -163,7 +163,7 @@
       "attendees": []
     },
     {
-      "id": 942177,
+      "id": "942177",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -181,7 +181,7 @@
       "attendees": []
     },
     {
-      "id": 2264473,
+      "id": "2264473",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -199,7 +199,7 @@
       "attendees": []
     },
     {
-      "id": 122072,
+      "id": "122072",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -217,7 +217,7 @@
       "attendees": []
     },
     {
-      "id": 7187588,
+      "id": "7187588",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -235,7 +235,7 @@
       "attendees": []
     },
     {
-      "id": 5584484,
+      "id": "5584484",
       "user": {
         "id": "abc123",
         "name": "Taidinh"
@@ -250,6 +250,24 @@
       "location": "test education",
       "date": "2024-05-16T23:55:00.000Z",
       "time": "6:00",
+      "attendees": []
+    },
+    {
+      "id": 7377782,
+      "user": {
+        "id": "abc123",
+        "name": "Taidinh"
+      },
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Taidinh"
+      },
+      "title": "somethingnew",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
       "attendees": []
     }
   ]
