@@ -6,13 +6,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "server": "json-server --watch ./db.json"
+    "server": "json-server --watch ./db.json",
+    "sv-delay": "json-server -d 1500 ./db.json"
   },
   "dependencies": {
     "axios": "^1.6.8",
     "core-js": "^3.8.3",
     "feather-icons": "^4.29.2",
     "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
     "sass-loader": "^14.2.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
@@ -31,7 +33,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "json-server": "^1.0.0-beta.0",
+    "json-server": "^1.0.0-beta.1",
     "prettier": "^2.4.1",
     "vue-template-compiler": "^2.6.14"
   }

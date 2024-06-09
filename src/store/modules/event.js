@@ -1,4 +1,4 @@
-import EventService from "@/services/EvenService";
+import EventService from "@/services/EventService";
 import { onAddNotification, EventType } from './notification';
 
 export const namespaced = true;
@@ -71,7 +71,7 @@ export const actions = {
     if (event) {
       commit('SET_EVENT', event);
     } else {
-      EventService.getEvent(id)
+      return EventService.getEvent(id)
         .then(response => {
           commit('SET_EVENT', response.data)
         })
