@@ -5,6 +5,7 @@ import EventShow from "../views/EventShow.vue";
 import EventCreate from "../views/EventCreate.vue";
 import User from "../views/User.vue";
 import NProgress from "nprogress";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,12 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
     component: EventShow,
     props: true,
+    beforeEnter(routeTo, routeFrom, next) {
+      store.dispatch('event/fetchEvent', routeTo.params.id).then((event) => {
+        routeTo.params.event = event;
+        next();
+      })
+    }
   },
   {
     path: "/user/:username",
